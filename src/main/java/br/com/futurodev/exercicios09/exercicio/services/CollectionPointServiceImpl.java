@@ -51,6 +51,13 @@ public class CollectionPointServiceImpl implements CollectionPointService {
         repository.delete(cp);
     }
 
+    @Override
+    public List<CollectionPointResponseDto> findAllProductsByName(String name) {
+        List<CollectionPoint> collectionPoints = repository.findAllByName(name);
+
+        return CollectionPointMapper.toResponseDtos(collectionPoints);
+    }
+
     private CollectionPoint findEntityById (Long id) {
         return repository.findById(id).orElseThrow(null);
     }

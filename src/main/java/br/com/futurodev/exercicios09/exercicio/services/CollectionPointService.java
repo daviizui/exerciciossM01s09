@@ -12,4 +12,6 @@ public interface CollectionPointService {
     CollectionPointResponseDto create(CollectionPointRequestDto dto);
     CollectionPointResponseDto update(Long id, CollectionPointRequestDto dto);
     void delete(Long id);
+
+    List<CollectionPointResponseDto> findAllProductsByName(String name);
 }
