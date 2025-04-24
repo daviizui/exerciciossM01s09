@@ -11,7 +11,7 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("collectionPoint")
+@RequestMapping("collectionPoints")
 public class CollectionPointController {
     
     private final CollectionPointService service;
@@ -22,18 +22,18 @@ public class CollectionPointController {
     }
     
     @GetMapping("/{id}")
-    public CollectionPointResponseDto findById(Long id) {
+    public CollectionPointResponseDto findById(@PathVariable Long id) {
         return service.findById(id);
     }
     
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public CollectionPointResponseDto create(CollectionPointRequestDto dto) {
+    public CollectionPointResponseDto create(@RequestBody CollectionPointRequestDto dto) {
         return service.create(dto);
     }
     
     @PutMapping("/{id}")
-    public CollectionPointResponseDto update(@PathVariable Long id, CollectionPointRequestDto dto) {
+    public CollectionPointResponseDto update(@PathVariable Long id,@RequestBody CollectionPointRequestDto dto) {
         return service.update(id, dto);
     }
     

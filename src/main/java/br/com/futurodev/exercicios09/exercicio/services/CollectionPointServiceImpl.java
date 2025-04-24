@@ -47,8 +47,8 @@ public class CollectionPointServiceImpl implements CollectionPointService {
 
     @Override
     public void delete(Long id) {
-        CollectionPoint ew = findEntityById(id);
-        repository.delete(ew);
+        CollectionPoint cp = findEntityById(id);
+        repository.delete(cp);
     }
 
     private CollectionPoint findEntityById (Long id) {
@@ -56,6 +56,7 @@ public class CollectionPointServiceImpl implements CollectionPointService {
     }
 
     private CollectionPointResponseDto save(CollectionPoint cp, CollectionPointRequestDto dto){
+
         CollectionPointMapper.toEntity(cp,dto);
 
         for (CollectionPointMaterialRequestDto materialDto : dto.materials()) {

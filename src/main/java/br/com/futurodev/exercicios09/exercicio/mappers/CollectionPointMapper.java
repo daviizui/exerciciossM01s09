@@ -32,4 +32,5 @@ public class CollectionPointMapper {
     public static List <CollectionPointResponseDto> toResponseDtos(List<CollectionPoint> entities) {
        return entities.stream().map(CollectionPointMapper::toResponseDto).toList();
     }
+
 }
