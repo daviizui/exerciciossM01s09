@@ -3,6 +3,7 @@ package br.com.futurodev.exercicios09.exercicio.mappers;
 import br.com.futurodev.exercicios09.exercicio.dtos.CollectionPointsDtos.CollectionPointRequestDto;
 import br.com.futurodev.exercicios09.exercicio.dtos.CollectionPointsDtos.CollectionPointResponseDto;
 import br.com.futurodev.exercicios09.exercicio.entities.CollectionPoint;
+import br.com.futurodev.exercicios09.exercicio.erros.expections.badRequest.CollectionPointRequiredAttributeException;
 
 import java.util.List;
 
@@ -32,5 +33,7 @@ public class CollectionPointMapper {
     public static List <CollectionPointResponseDto> toResponseDtos(List<CollectionPoint> entities) {
        return entities.stream().map(CollectionPointMapper::toResponseDto).toList();
     }
+
+
 
 }
