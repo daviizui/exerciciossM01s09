@@ -60,7 +60,7 @@ public class ElectronicWasteServiceImpl implements ElectronicWasteService {
             throw new ElectronicWasteRequiredAttributeException("type");
         }
         if (dto.description() == null || dto.description().isBlank()) {
-            throw new IllegalArgumentException("description");
+            throw new ElectronicWasteRequiredAttributeException("description");
         }
     }
 }
